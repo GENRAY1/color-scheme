@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.color-cols{
+  display: flex;
+  height: 100vh;
+}
+
+.color-col{
+  flex:1;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.color-col__title{
+  font-family: 'IBMPlexSans';
+  font-size: 28px;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  padding: 7px 20px;
+  transition: 300ms;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.2);
+}
+.color-col__title:hover{
+  cursor: pointer;
+  background: rgba(0,0,0,0.4);
+}
+.color-col__btn{
+  border: 0;
+  outline: 0;
+  padding: 10px 8px;
+  border-radius: 6px;
+  background: transparent;
+  background: rgba(0,0,0,0.2);
+}
+.color-col__btn:hover{
+  cursor: pointer;
+  background: rgba(0,0,0,0.4);
+}
+.color-col__icon{
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(./imgs/lock-open.svg);
+}
+.color-col__icon--lock{
+  background-image: url(./imgs/lock-close.svg);
+}
