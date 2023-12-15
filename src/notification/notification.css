@@ -1,0 +1,14 @@
+.notifications{
+    position: absolute;
+    top:20px;
+    right: 20px;
+    gap:20px;
+}
+.notification{
+    padding: 20px 25px;
+    background: rgba(17, 16, 16, 0.9);
+    width: 380px;
+    color:#e0d5d5;
+    transition: 500ms;
+    margin-bottom: 10px;
+}

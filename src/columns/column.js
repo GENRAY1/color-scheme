@@ -1,6 +1,7 @@
 import { createElement } from "../utils";
 import { removeColorToHash} from "../hash"
 import { MIN_COLUMNS } from "./columns";
+import { notification } from "../notification/notification";
 
 const createHexTitle=(color)=>{
     const h = createElement({
@@ -12,6 +13,7 @@ const createHexTitle=(color)=>{
     })
     h.addEventListener("click", (e)=>{
         navigator.clipboard.writeText(e.target.textContent)
+        notification("Цвет был успешно скопирован в буфер обмена")
     })
     return h
 }
@@ -37,6 +39,8 @@ const createRemoveBtn=()=>{
             const color = currentCol.textContent.substring(1);
             removeColorToHash(color)
             currentCol.remove();
+        }else{
+            notification(`Достигнут лимит максимального колл-ва блоков (макс: ${MIN_COLUMNS})`)
         }
     })
     return btn;
@@ -74,6 +78,7 @@ const createEditBtn=()=>{
             createElement({tag:"div", params:{classList:["col__edit-icon", "icon"]}})
         ]
     })
+    btn.addEventListener("click", ()=> notification("В РАЗРАБОТКЕ!"))
     return btn
 }
 

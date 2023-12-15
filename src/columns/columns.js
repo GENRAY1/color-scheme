@@ -2,7 +2,8 @@ import { generateColor } from "../color"
 import { setColorsToHash, appendColorToHash } from "../hash"
 import { createColumn } from "./column";
 import { createElement } from "../utils";
-
+import { notification } from "../notification/notification";
+import "./columns.css"
 const rootElement = document.getElementById("app");
 let colsElement;
 export const MAX_COLUMNS = 8;
@@ -25,6 +26,8 @@ const createAddColumnBtn = ()=>{
             const newCol = createColumn(color)
             appendColorToHash(color)
             colsElement?.appendChild(newCol)
+        }else{
+            notification(`Достигнут лимит максимального колл-ва блоков (макс: ${MAX_COLUMNS})`)
         }
     })
     return btn
