@@ -2,14 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: whitesmoke;
+  font-family: 'IBMPlexSans';
 }
 
-.color-cols{
+.cols{
   display: flex;
   height: 100vh;
 }
 
-.color-col{
+.col{
   flex:1;
   display: flex;
   justify-content: space-around;
@@ -17,40 +19,67 @@
   align-items: center;
   flex-wrap: nowrap;
 }
-.color-col__title{
-  font-family: 'IBMPlexSans';
+.btn{
+  border: 0;
+  outline: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: transparent;
+  background: rgba(0,0,0,0.2);
+  text-align: center;
+}
+.btn:hover{
+  cursor: pointer;
+  background: rgba(0,0,0,0.4);
+}
+.add-btn{
+  position: absolute;
+  background: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,0,0,0.7);
+  padding: 10px 20px;
+  border-radius: 50%;
   font-size: 28px;
-  color: whitesmoke;
+}
+.col__hex{
+  font-size: 28px;
   letter-spacing: 2px;
   padding: 7px 20px;
   transition: 300ms;
   border-radius: 6px;
   background: rgba(0,0,0,0.2);
 }
-.color-col__title:hover{
-  cursor: pointer;
-  background: rgba(0,0,0,0.4);
+
+.col__options{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
 }
-.color-col__btn{
-  border: 0;
-  outline: 0;
-  padding: 10px 8px;
-  border-radius: 6px;
-  background: transparent;
-  background: rgba(0,0,0,0.2);
-}
-.color-col__btn:hover{
-  cursor: pointer;
-  background: rgba(0,0,0,0.4);
-}
-.color-col__icon{
-  width: 30px;
-  height: 30px;
+
+
+
+.icon{
+  width: 20px;
+  height: 25px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.col__remove-icon{
+  background-image: url(./imgs/close.svg)
+}
+.col__lock-icon{
+  width: 30px;
+  height: 30px;
   background-image: url(./imgs/lock-open.svg);
 }
-.color-col__icon--lock{
+.col__lock-icon--close{
   background-image: url(./imgs/lock-close.svg);
 }
