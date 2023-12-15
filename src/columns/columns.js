@@ -15,7 +15,7 @@ const createAddColumnBtn = ()=>{
             classList:["add-btn", "btn"]
         },
         childrens:[
-            createElement({tag:"div", params:{classList:["add-btn__icon"], text:"+"}})
+            createElement({tag:"div", params:{classList:["add-btn__icon","icon"]}})
         ]
     })
 

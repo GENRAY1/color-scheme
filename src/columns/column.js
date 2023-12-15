@@ -24,7 +24,7 @@ const createRemoveBtn=()=>{
         },
         dataset:{action:"remove"},
         childrens:[
-            createElement({tag:"div", params:{classList:["col__remove-icon", "icon"]}, dataset:{action:"remove"}})
+            createElement({tag:"div", params:{classList:["col__remove-icon", "icon"]}})
         ]
     })
 
@@ -64,6 +64,19 @@ const createLockBtn=()=>{
     return btn;
 }
 
+const createEditBtn=()=>{
+    const btn = createElement({
+        tag:"button",
+        params:{
+            classList:["col__edit-btn", "btn"]
+        },
+        childrens:[
+            createElement({tag:"div", params:{classList:["col__edit-icon", "icon"]}})
+        ]
+    })
+    return btn
+}
+
 export function createColumn(color){
     const col = createElement({
         tag:"div",
@@ -73,8 +86,9 @@ export function createColumn(color){
         childrens:[
             createHexTitle(color),
             createElement({tag:"div", params:{class:"col__options"}, childrens:[
+                createEditBtn(),
                 createLockBtn(),
-                createRemoveBtn()
+                createRemoveBtn(),
             ]})
         ]
     })

@@ -22,8 +22,8 @@
 .btn{
   border: 0;
   outline: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,15 +38,16 @@
 }
 .add-btn{
   position: absolute;
-  background: fixed;
+  width: auto;
+  height: auto;
   top: 20px;
   right: 20px;
+  padding: 18px;
   background: rgba(255,0,0,0.7);
-  padding: 10px 20px;
   border-radius: 50%;
-  font-size: 28px;
 }
 .col__hex{
+  cursor: pointer;
   font-size: 28px;
   letter-spacing: 2px;
   padding: 7px 20px;
@@ -54,32 +55,44 @@
   border-radius: 6px;
   background: rgba(0,0,0,0.2);
 }
+.col__hex:hover{
+  cursor: pointer;
+  background: rgba(0,0,0,0.4);
+}
 
 .col__options{
   display: flex;
   flex-direction: row;
   gap: 5px;
-
 }
 
 
 
 .icon{
-  width: 20px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .col__remove-icon{
+  width: 21px;
+  height: 21px;
   background-image: url(./imgs/close.svg)
 }
 .col__lock-icon{
-  width: 30px;
+  width: 28px;
   height: 30px;
   background-image: url(./imgs/lock-open.svg);
 }
 .col__lock-icon--close{
   background-image: url(./imgs/lock-close.svg);
+}
+.col__edit-icon{
+  background-image: url(./imgs/edit.svg);
+}
+.add-btn__icon{
+  position: relative;
+  background-image: url(./imgs/add.svg)
 }
