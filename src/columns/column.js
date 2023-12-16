@@ -40,7 +40,7 @@ const createRemoveBtn=()=>{
             removeColorToHash(color)
             currentCol.remove();
         }else{
-            notification(`Достигнут лимит максимального колл-ва блоков (макс: ${MIN_COLUMNS})`)
+            notification(`Достигнут лимит минимального колл-ва блоков (мин: ${MIN_COLUMNS})`)
         }
     })
     return btn;

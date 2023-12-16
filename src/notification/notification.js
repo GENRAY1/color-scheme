@@ -1,18 +1,27 @@
 import { createElement } from "../utils"
 import "./notification.css"
 
-const DEFAULT_DELAY  = 2000;
-const MAX_NOTIFICATION = 8;
+const DEFAULT_DELAY  = 3000;
+const LIMIT_NOTIFICATIONS = 3;
 let notifications;
 
-const create = (message) => {
+const createCloseBtn = ()=>{
+    const btn = createElement({tag:"div", params:{classList:["notification__close-btn"]}})
+    btn.addEventListener("click",(e)=>{
+        e.target.parentNode.parentNode.remove();
+    })
+    return btn;        
+}
+
+const createNotification = (message) => {
     const notice = createElement({
         tag:"li",
         params:{class:"notification"},
         childrens:[
-            createElement({tag:"div", params:{class:"notification__header"}}),
+            createElement({tag:"div", params:{class:"notification__header"}, childrens:[
+                createCloseBtn()
+            ]}),
             createElement({tag:"div", params:{class:"notification__content", innerText:message}}),
-            createElement({tag:"div", params:{class:"notification__footer"}})
         ]
     })
     return notice;
@@ -21,19 +30,20 @@ const create = (message) => {
 export function notification(message, delay = undefined){
     if (!notifications){throw "notifications are not initialized"} 
     
+    let last = notifications.lastChild
+    if(last && last.innerText === message) return
+
     if(!delay) delay = DEFAULT_DELAY
 
+    const notice = createNotification(message);
 
-    const notice = create(message);
-    
-
-    if(notifications.children.length === MAX_NOTIFICATION)
+    if(notifications.children.length === LIMIT_NOTIFICATIONS)
         notifications.replaceChildren(notice)
     else
         notifications.appendChild(notice)
 
     setTimeout(()=>{
-        if(notice.isConnected)
+        if(notice.isConnected) 
             notifications.removeChild(notice)
     }, delay)
 }

@@ -13,10 +13,10 @@ const welcomeMsg = `Привет юзер! Вот тебе небольшая и
 function main (){
     initNotifications()
     const colorsFromHash = getColorsFromHash()
-    const colors = colorsFromHash.length?colorsFromHash:generateColors(5)
+    const colors = colorsFromHash.length?colorsFromHash:generateColors(3)
 
     render(colors)
-    notification(welcomeMsg, 10000)
+    notification(welcomeMsg, 20000)
     document.addEventListener("keydown", (e)=>{
         if(e.code.toLowerCase()==="space"){
             e.preventDefault()

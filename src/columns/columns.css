@@ -1,4 +1,4 @@
-.cols{
+  .cols{
     display: flex;
     height: 100vh;
   }
@@ -46,6 +46,11 @@
     transition: 300ms;
     border-radius: 6px;
     background: rgba(0,0,0,0.2);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   .col__hex:hover{
     cursor: pointer;
